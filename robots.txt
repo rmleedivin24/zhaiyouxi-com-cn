@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rmleedivin24.github.io/zhaiyouxi-com-cn/sitemap.xml

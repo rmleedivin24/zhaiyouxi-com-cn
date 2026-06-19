@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2b2b2b;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fcfaf5;
+            padding: 2.8rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero {
+            margin-bottom: 2.2rem;
+        }
+
+        .hero-short {
+            font-size: 1.8rem;
+            letter-spacing: 0.02em;
+            font-weight: normal;
+            border-left: 4px solid #c7b89b;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #3a3a3a;
+        }
+
+        .hero-short span {
+            background: #eae3d6;
+            padding: 0 0.4rem;
+        }
+
+        .intro p {
+            margin-bottom: 1.4rem;
+            text-indent: 2em;
+            font-size: 1.05rem;
+        }
+
+        .intro strong {
+            font-weight: 600;
+            color: #5e4b34;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem 2rem;
+            margin: 2.4rem 0 2rem 0;
+            padding: 1.8rem 1.2rem;
+            background: #f4efe6;
+            border-radius: 18px;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            padding: 0.2rem 0;
+        }
+
+        .feature-item h3 {
+            font-size: 1.08rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+            color: #4d3e2c;
+            border-bottom: 1px dashed #d9cfbe;
+            padding-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f4a42;
+            margin-top: 0.2rem;
+        }
+
+        .notice-block {
+            background: #f0ebe0;
+            border-left: 6px solid #b8a78d;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0 1.8rem 0;
+            border-radius: 0 14px 14px 0;
+            font-size: 0.98rem;
+        }
+
+        .notice-block strong {
+            color: #4b3c29;
+        }
+
+        .scene-list {
+            margin: 1.8rem 0;
+            padding-left: 1.2rem;
+        }
+
+        .scene-list li {
+            margin-bottom: 0.7rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.4rem;
+        }
+
+        .scene-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #aa947a;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.2rem 0;
+            padding-top: 0.8rem;
+            border-top: 1px solid #ddd6c8;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #5a4a35;
+            padding: 0.4rem 0;
+            outline: none;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini p {
+            padding-left: 0.8rem;
+            color: #4c463e;
+            font-size: 0.96rem;
+            margin: 0.3rem 0 0.6rem 0;
+        }
+
+        .gentle-end {
+            margin-top: 2.6rem;
+            padding: 1.2rem 1.8rem;
+            background: #f2ede2;
+            border-radius: 40px 12px 40px 12px;
+            text-align: center;
+        }
+
+        .gentle-end p {
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+        }
+
+        a {
+            color: #6b543b;
+            text-decoration: none;
+            border-bottom: 1px solid #cfc1ae;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #3f2f1d;
+            border-bottom-color: #7a6247;
+        }
+
+        .footer-note {
+            margin-top: 2.1rem;
+            font-size: 0.85rem;
+            text-align: right;
+            color: #8b7f6e;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .container {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .hero-short {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.2rem 1rem;
+            }
+
+            .feature-item {
+                flex: 1 1 auto;
+            }
+
+            .notice-block {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-short">
+                有时候，<span>爱游戏</span> 就是一次安静的翻阅。
+            </div>
+        </div>
+
+        <div class="intro">
+            <p>对于许多习惯在碎片时间里找点乐子的人来说，游戏早已不是单纯的消遣，更像一种熟悉的陪伴。但网站多了，信息杂了，反倒不容易找到那个恰好合拍的入口。这里不打算告诉你什么才是“最好”的游戏世界，只想给一份更接近直觉的指引——当你想起 <a href="https://zhaiyouxi.com.cn">爱游戏</a> 这个名字时，或许可以试试先停下来看看它本身的模样。</p>
+            <p><strong>这个站点并非一座堆满链接的仓库</strong>，它更倾向于让你自己决定节奏。没有弹窗催促，没有浮夸的标语，页面上的一切都留出了呼吸的余地。你可能会发现一些熟悉的经典，也可能撞见某个冷门但有趣的角落——但所有发现都来自你自己的浏览，而不是被推着走。</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>分类不是牢笼</h3>
+                <p>标签只负责引路，不负责定义。你可以从冒险跳到解谜，再从策略滑到叙事，没有人规定必须玩完一类才能换。</p>
+            </div>
+            <div class="feature-item">
+                <h3>更新不喧哗</h3>
+                <p>内容会缓慢累积，但不会用红点或弹窗来提醒你。想看新东西时，自己逛一圈就好。</p>
+            </div>
+            <div class="feature-item">
+                <h3>适配各种屏幕</h3>
+                <p>手机、平板、笔记本——排版都会自动调整，不缩放、不遮挡，阅读体验始终干净。</p>
+            </div>
+        </div>
+
+        <div class="notice-block">
+            <strong>🕊️ 一点提醒：</strong> 如果你第一次来到 <a href="https://zhaiyouxi.com.cn">爱游戏</a>，不妨把首页当作一张索引地图。不必急着点开所有链接，先感受一下整体的气息。有些藏在二级页面里的内容，反而更值得慢慢翻看。
+        </div>
+
+        <ul class="scene-list">
+            <li>周末午后，泡杯茶，打开一个看起来没玩过的类型 —— 哪怕只试十分钟。</li>
+            <li>通勤路上，浏览一下最近更新的短评，或许会发现某款被你忽略的作品。</li>
+            <li>纯粹想换个心情，不为了通关，只是为了在那些像素或手绘的画面里待一会儿。</li>
+        </ul>
+
+        <div class="faq-mini">
+            <details>
+                <summary>这里的游戏需要注册或付费吗？</summary>
+                <p><a href="https://zhaiyouxi.com.cn">爱游戏</a> 本身只是一个信息索引和推荐站，不直接提供下载或购买。大部分链接会指向开发者主页或公开试玩页面，至于是否付费，完全取决于你点进去的那个具体游戏。</p>
+            </details>
+            <details>
+                <summary>为什么有些页面看起来很简单？</summary>
+                <p>因为创作者更在意内容本身的清晰度，而不是用复杂的动效来制造热闹。简单意味着加载更快，也意味着你更容易找到想看的那个部分。</p>
+            </details>
+        </div>
+
+        <div class="gentle-end">
+            <p>游戏是自由的，选游戏的方式也可以自由一些。</p>
+            <p>没有压力，没有必须完成的任务。当你下次偶然想起游戏这个词，不妨顺着自己的感觉，再去 <a href="https://zhaiyouxi.com.cn">爱游戏</a> 随便逛逛。</p>
+        </div>
+
+        <div class="footer-note">
+            © 一份安静的索引 · 仅作指引
+        </div>
+    </div>
+</body>
+</html>
