@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>澳洲幸运10 · 简明访问指南</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #faf7f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 0 1.2rem;
+    }
+    .page-wrap {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #fffcf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    /* 顶部导航 */
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      background: #f5efe6;
+      border-bottom: 1px solid #e6ddd0;
+    }
+    .topnav .brand {
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #6b4f3a;
+    }
+    .topnav .brand span { color: #a77b5a; }
+    .topnav-links {
+      display: flex;
+      gap: 1.8rem;
+    }
+    .topnav-links a {
+      text-decoration: none;
+      color: #4d3e2f;
+      font-size: 0.95rem;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 3px;
+      transition: 0.2s;
+    }
+    .topnav-links a:hover {
+      border-bottom-color: #b28b6b;
+      color: #3a2e22;
+    }
+    /* hero 区 */
+    .hero {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, #fcf7f0 0%, #fffcf8 100%);
+    }
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 350;
+      letter-spacing: 1px;
+      color: #3a2c1f;
+      margin-bottom: 0.8rem;
+    }
+    .hero h1 strong {
+      font-weight: 500;
+      color: #7a5d44;
+    }
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 1rem;
+      font-size: 1.05rem;
+      color: #4f4132;
+    }
+    .hero .tagline {
+      background: #efe7db;
+      display: inline-block;
+      padding: 0.3rem 1.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #4c3a28;
+      margin-top: 0.5rem;
+    }
+    /* 核心介绍 - 引用块/提示框 */
+    .core-note {
+      margin: 2rem 2rem 1.5rem;
+      padding: 1.4rem 1.8rem;
+      background: #f4ede3;
+      border-left: 6px solid #b89b7b;
+      border-radius: 12px;
+      font-style: normal;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .core-note p {
+      margin-bottom: 0.5rem;
+    }
+    .core-note p:last-child { margin-bottom: 0; }
+    .core-note a {
+      color: #6d4f31;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: 0.2s;
+    }
+    .core-note a:hover {
+      color: #3f2d1b;
+      text-decoration-color: #b28b6b;
+    }
+    /* 三个场景模块 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 1.5rem 2rem 2rem;
+    }
+    .scene-card {
+      background: #faf5ed;
+      border-radius: 18px;
+      padding: 1.6rem 1.3rem 1.5rem;
+      transition: all 0.15s ease;
+      border: 1px solid #e7dbcc;
+    }
+    .scene-card:hover {
+      background: #f7efe3;
+      border-color: #ccb79e;
+      box-shadow: 0 4px 12px rgba(156, 122, 87, 0.05);
+    }
+    .scene-card .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .scene-card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #4a3726;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed #dacbbc;
+      padding-bottom: 0.3rem;
+    }
+    .scene-card p {
+      font-size: 0.92rem;
+      color: #4e3f2e;
+      line-height: 1.6;
+    }
+    /* 常见说明 / FAQ摘要 */
+    .faq-summary {
+      padding: 1.8rem 2rem 2.2rem;
+      border-top: 1px solid #e5d9ca;
+    }
+    .faq-summary h2 {
+      font-weight: 400;
+      font-size: 1.4rem;
+      color: #3b2c1d;
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #ede3d6;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item .q {
+      font-weight: 500;
+      color: #4f3b27;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item .a {
+      color: #5b4a37;
+      padding-left: 0.8rem;
+      border-left: 3px solid #cfbca7;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+    .faq-item .a a {
+      color: #6d4f31;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .faq-item .a a:hover { color: #3f2d1b; }
+    /* 底部 */
+    .footer-note {
+      padding: 1.5rem 2rem;
+      background: #f0e6d9;
+      font-size: 0.85rem;
+      color: #5e4d38;
+      text-align: center;
+      border-top: 1px solid #e0d0bc;
+    }
+    .footer-note a {
+      color: #5e4d38;
+      text-decoration: underline;
+    }
+    /* 响应式 */
+    @media (max-width: 750px) {
+      .topnav { flex-direction: column; gap: 0.8rem; padding: 1rem 1.2rem; }
+      .topnav-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero { padding: 2.2rem 1rem 1.5rem; }
+      .core-note { margin: 1.2rem 1rem; padding: 1rem 1.2rem; }
+      .scenes { grid-template-columns: 1fr; gap: 1.2rem; padding: 0.8rem 1rem 1.5rem; }
+      .faq-summary { padding: 1.2rem 1rem 1.8rem; }
+      .footer-note { padding: 1rem 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.4rem; }
+      .scene-card { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <nav class="topnav">
+    <div class="brand"><span>✦</span> 指南·AU10</div>
+    <div class="topnav-links">
+      <a href="#">简明介绍</a>
+      <a href="#">使用场景</a>
+      <a href="#">常见备忘</a>
+    </div>
+  </nav>
+
+  <!-- hero 区域 -->
+  <section class="hero">
+    <h1>关于 <strong>澳洲幸运10</strong> 的一份简明访问指引</h1>
+    <p>从了解、浏览到日常使用，保持轻松且清醒的节奏。这里不是推广，而是一点温和的提醒。</p>
+    <div class="tagline">☕ 信息聚合 · 轻量导航</div>
+  </section>
+
+  <!-- 核心介绍 + 引用块（自然嵌入链接） -->
+  <div class="core-note">
+    <p>如果你正在寻找一个可以持续关注数字趋势与开奖节奏的站点，不妨试一试 <a href="https://site-ao10.com">澳洲幸运10</a> 。它本身只是一个信息平台，但很多人习惯把它当作日常参考。</p>
+    <p>请记住：任何形式的数字游戏都带有随机性与不确定性。保持适度参与，把它当作一种娱乐消遣，而不是收入来源。我们在这里提供的是访问路径上的提醒，而不是操作建议。</p>
+  </div>
+
+  <!-- 三个场景模块（轻量导航式） -->
+  <div class="scenes">
+    <div class="scene-card">
+      <span class="emoji">🔍</span>
+      <h3>查阅与浏览</h3>
+      <p>适合在休息时简单浏览走势与历史记录。页面结构清晰，数据更新及时，无需注册即可查看。把它当作一个安静的信息窗。</p>
+    </div>
+    <div class="scene-card">
+      <span class="emoji">📱</span>
+      <h3>移动端随手参考</h3>
+      <p>不论在通勤路上还是午休间隙，移动端适配让浏览更顺手。不追求高频刷新，适合偶尔打开了解近期数据分布。</p>
+    </div>
+    <div class="scene-card">
+      <span class="emoji">🧘</span>
+      <h3>保持节奏的方式</h3>
+      <p>建议设定一个简单的时间边界——比如每天只看一次。不追逐连开、不依赖所谓“规律”。平稳心态比任何技巧都重要。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>一些常见说明</h2>
+    <div class="faq-item">
+      <div class="q">▸ 网站需要注册或付费吗？</div>
+      <div class="a">不需要。访问 <a href="https://site-ao10.com">澳洲幸运10</a> 即可直接查看内容，无强制注册，也没有隐藏收费项目。注意保护个人信息，不要在非官方渠道输入密码。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">▸ 数据更新频率如何？</div>
+      <div class="a">通常保持实时更新，但偶尔会因为网络或维护延迟几分钟。如果遇到长时间未刷新，可以换个时段再浏览，尽量不要反复强行刷新。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">▸ 是否适合长期依赖？</div>
+      <div class="a">任何数字参考站点都不应该成为日常依赖。把它当作一个工具就好——偶尔使用、保持距离。生活里还有很多比数字更重要的事。</div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <p>温和提醒：理性浏览，量力而行。本页内容仅为访问导航与使用参考，不构成任何参与建议。</p>
+    <p style="margin-top: 0.4rem;">主要参考：<a href="https://site-ao10.com">澳洲幸运10</a> · 信息页面</p>
+  </div>
+
+</div>
+</body>
+</html>
