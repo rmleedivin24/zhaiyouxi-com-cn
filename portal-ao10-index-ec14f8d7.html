@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>再次遇见 · 澳洲幸运10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fce6cb 0%, #f7d9b5 35%, #f5d0a3 70%, #f0c28f 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #2d241a;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 250, 242, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 3rem 2.8rem;
+            box-shadow: 0 20px 40px rgba(120, 70, 30, 0.12), 0 8px 20px rgba(160, 100, 50, 0.08);
+            transition: box-shadow 0.25s ease;
+            border: 1px solid rgba(255, 240, 220, 0.6);
+        }
+
+        .card:hover {
+            box-shadow: 0 24px 48px rgba(140, 80, 30, 0.15);
+        }
+
+        .hero-line {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: #a87b52;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid #dba977;
+            padding-left: 1rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #3b2a1b;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #5c4531;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            background: rgba(235, 200, 165, 0.2);
+            padding: 0.8rem 1.4rem;
+            border-radius: 48px;
+            display: inline-block;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: #3e3227;
+            margin-bottom: 2.4rem;
+            max-width: 90%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.6rem;
+            margin: 2.6rem 0 2.8rem 0;
+        }
+
+        .feature-item {
+            background: rgba(250, 240, 228, 0.7);
+            border-radius: 28px;
+            padding: 1.6rem 1.4rem 1.4rem 1.4rem;
+            transition: background 0.2s, transform 0.15s;
+            border: 1px solid rgba(215, 180, 140, 0.3);
+        }
+
+        .feature-item:hover {
+            background: rgba(245, 225, 202, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .feature-item .icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3b2a1b;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #5e4b39;
+            margin-top: 0.3rem;
+        }
+
+        .story-block {
+            background: rgba(230, 200, 170, 0.2);
+            border-radius: 28px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 2.2rem 0;
+            border-left: 5px solid #dba977;
+        }
+
+        .story-block p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .reminder {
+            background: #ffffffd9;
+            padding: 1.2rem 1.8rem;
+            border-radius: 48px;
+            font-size: 1rem;
+            margin: 1.6rem 0 2.2rem 0;
+            border: 1px solid #ecd3b6;
+            color: #3b2a1b;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(140, 80, 30, 0.06);
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.8rem 0;
+            border-top: 1px solid #e6d3be;
+            padding-top: 1.8rem;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .faq-item strong {
+            color: #7c5e40;
+            min-width: 4.5rem;
+            font-weight: 600;
+        }
+
+        .faq-item span {
+            color: #3d3025;
+        }
+
+        .link-wrapper {
+            margin: 2.4rem 0 0.8rem 0;
+            font-size: 1.05rem;
+        }
+
+        .link-wrapper a {
+            color: #7a5435;
+            background: transparent;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #dba977;
+            padding-bottom: 2px;
+            transition: border-color 0.2s, color 0.2s;
+            border-radius: 0;
+        }
+
+        .link-wrapper a:hover {
+            border-bottom-color: #8a623f;
+            color: #4c3622;
+        }
+
+        .closing {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0cdb6;
+            color: #6b5642;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .closing small {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 32px;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .intro-text {
+                max-width: 100%;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .faq-item {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .faq-item strong {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-line {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="hero-line">✦ 再次停留 · 持续关注</div>
+
+    <h1>总有一些站点<br>值得你第二次打开</h1>
+
+    <div class="subhead">澳洲幸运10 · 熟悉的节奏，新的视角</div>
+
+    <p class="intro-text">
+        书签栏里总有一些页面，会让人不自觉再次点开。不只是为了数据流转，更是因为那里有一套清晰、稳定的内容秩序。<strong>澳洲幸运10</strong> 就是这样一个位置——它不制造喧嚣，只持续提供结构化的信息流，让每一次回访都不需要重新适应。
+    </p>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span class="icon">📌</span>
+            <h3>收藏即入口</h3>
+            <p>页面表达稳定，无需每次重新定位。收藏一次，后续每一次打开都是熟悉的起点。</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🔄</span>
+            <h3>延续性阅读</h3>
+            <p>信息按时间线自然排列，上次看到哪里，这次就能无缝接续，无需反复回溯。</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🧭</span>
+            <h3>低干扰浏览</h3>
+            <p>没有突然的弹窗或强推送，内容层级分明，你可以按自己的节奏深入。</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">📆</span>
+            <h3>常看常新</h3>
+            <p>节奏稳定，但内容总有更新，让每次访问都既熟悉又略有不同。</p>
+        </div>
+    </div>
+
+    <div class="story-block">
+        <p>很多人会把某个页面设为「每天打开」，但更多的优质信息源其实是「想起来了就去看看」。<strong>澳洲幸运10</strong> 就属于后者——它不催促你，但只要你点开，就能立刻进入状态。</p>
+        <p>你不需要记住它每时每刻的变化，只要知道它一直在那里，等你需要的时候，打开收藏夹，找到那个已经熟悉的链接。</p>
+    </div>
+
+    <div class="reminder">
+        ⏳ 如果这是你第一次到访，不妨先收藏页面 —— 下次再来时，一切依然顺手。
+    </div>
+
+    <div class="faq-mini">
+        <div class="faq-item">
+            <strong>为什么收藏它？</strong>
+            <span>结构清晰、内容持续，不需要每次重新适应布局和逻辑。</span>
+        </div>
+        <div class="faq-item">
+            <strong>适合什么场景？</strong>
+            <span>日常信息浏览、固定节奏查阅、以及想要快速进入状态的时刻。</span>
+        </div>
+        <div class="faq-item">
+            <strong>多久看一次？</strong>
+            <span>全凭个人习惯，页面设计本身就支持低频高频两种节奏。</span>
+        </div>
+    </div>
+
+    <div class="link-wrapper">
+        如果你愿意，现在就可以把 <a href="https://portal-ao10.com">澳洲幸运10</a> 加入收藏栏，或直接开始浏览。
+    </div>
+
+    <div class="closing">
+        <span>— 简洁 · 稳定 · 可回访 —</span>
+        <small>持续关注，不打扰</small>
+    </div>
+</div>
+</body>
+</html>
