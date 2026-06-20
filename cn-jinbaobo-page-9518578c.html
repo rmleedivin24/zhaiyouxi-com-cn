@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <title>金宝博 · 稳定入口与知识库</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      background-color: #f5f7fb;
+      color: #1e293b;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* 深色头图 — 目录感入口区 */
+    .hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      padding: 3.2rem 1.8rem 3rem;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid #38bdf8;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #f1f5f9;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0.2rem auto 1.4rem;
+      border-bottom: 1px dashed #334155;
+      padding-bottom: 0.8rem;
+    }
+    .hero .label-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.2rem;
+      margin: 1.2rem 0 0.4rem;
+    }
+    .hero .label-group span {
+      background: rgba(56, 189, 248, 0.08);
+      color: #b9d9f0;
+      font-size: 0.82rem;
+      padding: 0.25rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid #1e3a5f;
+      font-weight: 400;
+    }
+    /* 主体容器 — 浅色正文区 */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 3.5rem;
+    }
+    /* 目录感布局：卡片 + 网格 + 紧凑 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.6rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      padding: 1.8rem 1.6rem 1.8rem;
+      border: 1px solid #ecf1f7;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 20, 40, 0.05);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card h3 .accent {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #38bdf8;
+      border-radius: 10px;
+      margin-right: 0.2rem;
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+    .card ul li::before {
+      content: "·";
+      color: #38bdf8;
+      font-weight: 700;
+      display: inline-block;
+      width: 1rem;
+    }
+    .card .small-meta {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 0.6rem;
+      border-top: 1px solid #eef2f6;
+      padding-top: 0.5rem;
+    }
+    /* 提示区 — 带背景色 */
+    .notice-box {
+      background: #eff6ff;
+      border-left: 5px solid #38bdf8;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.8rem 1.6rem;
+    }
+    .notice-box .icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      color: #0284c7;
+    }
+    .notice-box .text {
+      flex: 1;
+      min-width: 200px;
+    }
+    .notice-box .text p {
+      font-size: 0.95rem;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+    .notice-box .text .strong {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    /* 相关信息区 — FAQ 摘要风格 */
+    .info-section {
+      margin-top: 2rem;
+    }
+    .info-section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .faq-item {
+      background: #ffffff;
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 14px;
+      border: 1px solid #e9edf3;
+    }
+    .faq-item q {
+      font-weight: 500;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-style: normal;
+    }
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    /* 强调色链接 */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      font-weight: 500;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      color: #1d4ed8;
+      border-bottom: 1px solid #2563eb;
+    }
+    /* 正文区附加 */
+    .intro-line {
+      font-size: 0.98rem;
+      color: #334155;
+      margin-bottom: 2rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #dfe6ef;
+    }
+    .intro-line strong {
+      color: #0f172a;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2rem 0 1rem;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 2.8rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.8rem;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 2.2rem 1rem 2rem; }
+      .container { padding: 1.8rem 1rem; }
+      .card { padding: 1.4rem; }
+      .notice-box { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图：目录感入口 -->
+  <header class="hero">
+    <h1>金宝博 · 知识库</h1>
+    <div class="sub">信息聚合 · 稳定参照 · 使用说明</div>
+    <div class="label-group">
+      <span>入口指南</span>
+      <span>访问方式</span>
+      <span>环境提示</span>
+      <span>常见疑问</span>
+    </div>
+  </header>
+
+  <!-- 正文浅色区 -->
+  <main class="container">
+
+    <!-- 介绍 / 说明区：从稳定入口角度切入 -->
+    <div class="intro-line">
+      <strong>金宝博</strong> 是一个以体育赛事与线上娱乐为核心的服务平台，用户可通过其站点获取实时信息与相关服务。本页作为知识库式索引，聚合了访问路径、使用背景、环境配置及常见问题，帮助用户快速建立操作认知。
+    </div>
+
+    <!-- 卡片网格：特点 + 场景 + 说明 -->
+    <div class="grid-2">
+      <div class="card">
+        <h3><span class="accent"></span> 平台特点</h3>
+        <ul>
+          <li>覆盖主流体育项目与赛事数据</li>
+          <li>界面简洁，分类清晰，适合快速浏览</li>
+          <li>多语言支持及多种登录方式</li>
+          <li>持续维护与更新，稳定性较优</li>
+        </ul>
+        <div class="small-meta">信息基于公开使用反馈</div>
+      </div>
+      <div class="card">
+        <h3><span class="accent"></span> 适用场景</h3>
+        <ul>
+          <li>日常赛事信息查阅与关注</li>
+          <li>娱乐互动与即时数据对照</li>
+          <li>跨终端使用：桌面与移动端均可</li>
+          <li>需要稳定入口进行长期使用</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="accent"></span> 访问说明</h3>
+        <p>推荐通过官方推荐渠道获取最新地址。如遇到网络波动，可切换网络环境或使用备用域名。始终确认访问的页面为 <a href="https://cn-jinbaobo.com">金宝博</a> 官方展示内容。</p>
+        <p style="margin-top:0.6rem;">建议将页面添加至书签，避免从非官方链接进入。</p>
+      </div>
+      <div class="card">
+        <h3><span class="accent"></span> 使用指引</h3>
+        <p>注册与登录流程均可在首页完成。新用户可查看平台内的帮助中心或常见问题模块。所有操作均遵循平台用户协议。</p>
+        <p>登录后可根据个人偏好设置语言、通知及显示选项。</p>
+      </div>
+    </div>
+
+    <!-- 提示区：重要说明 + 稳定入口提示 -->
+    <div class="notice-box">
+      <div class="icon">📌</div>
+      <div class="text">
+        <p><span class="strong">稳定入口提示：</span> 请始终使用收藏夹中的链接 <a href="https://cn-jinbaobo.com">金宝博</a> 进行访问。如页面加载异常，可尝试清除缓存或更换网络后重试。切勿轻信第三方提供的所谓“极速入口”或“破解链接”。</p>
+        <p style="margin-top:0.4rem;">本平台未授权任何代理进行收费注册或账号交易，请通过官方渠道操作。</p>
+      </div>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 + 知识补充 -->
+    <section class="info-section">
+      <h2>相关信息</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <q>是否需要特殊软件？</q>
+          <p>无需安装额外软件，现代浏览器（Chrome / Edge / Safari 等）均可直接访问。部分功能可能需启用 JavaScript。</p>
+        </div>
+        <div class="faq-item">
+          <q>帐号安全如何保障？</q>
+          <p>建议开启二次验证、使用独立密码并定期修改。不要与他人共享帐号信息。</p>
+        </div>
+        <div class="faq-item">
+          <q>支付方式有哪些？</q>
+          <p>支持多种主流本地支付方式，具体选项以个人账户内显示为准。充值前可查看费率说明。</p>
+        </div>
+        <div class="faq-item">
+          <q>移动端体验如何？</q>
+          <p>响应式设计，手机浏览器即可获得完整功能。部分页面提供简化版视图。</p>
+        </div>
+        <div class="faq-item">
+          <q>数据更新频率？</q>
+          <p>赛事与赔率数据实时同步，具体延迟取决于赛事源及网络状况。</p>
+        </div>
+        <div class="faq-item">
+          <q>是否支持多语言？</q>
+          <p>界面主要支持中文，部分页面提供英文切换。可在设置中调整。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 附加说明区：知识补充（非重复） -->
+    <hr>
+    <p style="font-size:0.9rem; color:#475569; background: #f8fafc; padding:0.8rem 1rem; border-radius: 10px;">
+      📚 使用本平台前，建议阅读用户协议与风险提示。任何涉及资金的操作请保持审慎。本知识库页面仅提供信息索引，不构成投资或操作建议。如遇到技术问题，可优先查阅站内帮助文档。
+    </p>
+
+    <div class="footer-note">
+      <span>基于公开信息整理 · 仅供参考</span>
+    </div>
+
+  </main>
+
+</body>
+</html>
